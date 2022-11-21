@@ -8,29 +8,29 @@ import androidx.annotation.Nullable;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "BarberFast.sqlite";
+    private static final String DB_NAME = "barber_fast.db";
+    private static final String TBL_NAME = "tblUsuario";
     private static final int DB_VERSION = 1;
 
-    public AppDataBase(@Nullable Context context) {
+    public AppDataBase(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE tblUsuario \n" +
-                "(intIdUsuario INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "vchNome TEXT,\n" +
-                "vchUsuario TEXT,\n" +
-                "vchEmail TEXT,\n" +
-                "vchSenha TEXT,\n" +
-                "vchConfSenha TEXT\n" +
-                " )";
+        String sql = "CREATE TABLE " + TBL_NAME
+                + "(intIdUsuario integer primary key autoincrement,"
+                + "vchNome text,"
+                + "vchUsuario text,"
+                + "vchEmail text,"
+                + "vchSenha text,"
+                + "vchConfSenha text"
+                + " )";
 
         db.execSQL(sql);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 }

@@ -10,12 +10,14 @@ import java.util.TimerTask;
 
 public class ActivityTelaSplash extends AppCompatActivity {
 
-    private static final int TEMPO_TELA_ABERTA = 2000;
+    private static final int TEMPO_TELA_ABERTA = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        AppDataBase appDataBase = new AppDataBase(this);
 
         inicializarTelaLogin();
     }

@@ -20,8 +20,6 @@ public class ActivityTelaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //AppDataBase appDataBase = new AppDataBase(this);
-
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         txtCadastro = (TextView) findViewById(R.id.txtCadastro);
 
