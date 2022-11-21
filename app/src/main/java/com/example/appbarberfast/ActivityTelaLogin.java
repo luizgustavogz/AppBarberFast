@@ -15,7 +15,6 @@ public class ActivityTelaLogin extends AppCompatActivity {
     Button btnEntrar;
     TextView txtCadastro;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
         txtCadastro = (TextView) findViewById(R.id.txtCadastro);
 
         //abrirTelaCadastro();
-        //abrirTelaMenu();
+        abrirTelaMenu();
     }
 
     /*
@@ -40,7 +39,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
     }
     */
 
-    /*
+
     public void abrirTelaMenu(){
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,5 +49,4 @@ public class ActivityTelaLogin extends AppCompatActivity {
             }
         });
     }
-    */
 }
