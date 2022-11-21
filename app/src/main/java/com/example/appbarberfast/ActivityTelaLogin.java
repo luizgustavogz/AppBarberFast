@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityTelaLogin extends AppCompatActivity {
 
     ImageView logo_barberfast, logo_google, logo_facebook, logo_twitter;
     EditText email, senha;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         logo_barberfast = (ImageView) findViewById(R.id.logo_barberfast);
         logo_google = (ImageView) findViewById(R.id.logo_google);

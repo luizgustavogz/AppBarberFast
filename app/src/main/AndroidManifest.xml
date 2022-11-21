@@ -14,7 +14,10 @@
         android:theme="@style/Theme.AppBarberFast"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityTelaLogin"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityTelaSplash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

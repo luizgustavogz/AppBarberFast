@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo_azul"
-    tools:context=".MainActivity">
+    tools:context=".ActivityTelaLogin">
 
     <ImageView
         android:id="@+id/logo_barberfast"
