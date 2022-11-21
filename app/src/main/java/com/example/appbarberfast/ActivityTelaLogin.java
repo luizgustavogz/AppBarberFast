@@ -23,11 +23,10 @@ public class ActivityTelaLogin extends AppCompatActivity {
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         txtCadastro = (TextView) findViewById(R.id.txtCadastro);
 
-        //abrirTelaCadastro();
+        abrirTelaCadastro();
         abrirTelaMenu();
     }
 
-    /*
     public void abrirTelaCadastro(){
         txtCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +36,6 @@ public class ActivityTelaLogin extends AppCompatActivity {
             }
         });
     }
-    */
-
 
     public void abrirTelaMenu(){
         btnEntrar.setOnClickListener(new View.OnClickListener() {
