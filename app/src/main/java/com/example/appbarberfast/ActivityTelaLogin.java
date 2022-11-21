@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ActivityTelaLogin extends AppCompatActivity {
 
-    ImageView logo_barberfast, logo_google, logo_facebook, logo_twitter;
+    ImageView logo_barberfast;
     EditText email, senha;
     Button btnEntrar;
     TextView txtCadastro;
@@ -22,9 +22,6 @@ public class ActivityTelaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         logo_barberfast = (ImageView) findViewById(R.id.logo_barberfast);
-        logo_google = (ImageView) findViewById(R.id.logo_google);
-        logo_facebook = (ImageView) findViewById(R.id.logo_facebook);
-        logo_twitter = (ImageView) findViewById(R.id.logo_twitter);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
