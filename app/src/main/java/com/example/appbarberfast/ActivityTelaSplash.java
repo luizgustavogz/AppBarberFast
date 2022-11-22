@@ -17,15 +17,13 @@ public class ActivityTelaSplash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        AppDataBase appDataBase = new AppDataBase(this);
-
         inicializarTelaLogin();
     }
 
-    private void inicializarTelaLogin(){
-        new Timer().schedule(new TimerTask(){
+    private void inicializarTelaLogin() {
+        new Timer().schedule(new TimerTask() {
             @Override
-            public void run(){
+            public void run() {
                 finish();
                 Intent telaLogin = new Intent(getApplicationContext(), ActivityTelaLogin.class);
                 startActivity(telaLogin);
