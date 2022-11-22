@@ -57,7 +57,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), ActivityTelaMenu.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(ActivityTelaLogin.this, "Houve um erro ao logar", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityTelaLogin.this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

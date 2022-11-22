@@ -29,8 +29,9 @@
         android:ems="10"
         android:hint="Usuário"
         android:inputType="textEmailAddress"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_barberfast" />
 
@@ -44,8 +45,9 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuarioLogin" />
 
@@ -58,6 +60,7 @@
         android:layout_marginEnd="5dp"
         android:text="Ainda não tem cadastro?"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/txtCadastro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
@@ -71,6 +74,7 @@
         android:layout_marginEnd="104dp"
         android:text="Clique aqui!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
