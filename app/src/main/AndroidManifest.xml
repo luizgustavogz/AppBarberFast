@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.appbarberfast">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,19 +16,30 @@
         android:theme="@style/Theme.AppBarberFast"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityTelaCadastro"
-            android:label="Cadastro"
+            android:name=".ActivityTelaConsultaAgendamento"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name=".ActivityTelaAgendamento"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ActivityTelaCadastro"
+            android:exported="false"
+            android:label="Cadastro"></activity>
         <activity
             android:name=".ActivityTelaMenu"
             android:label="@string/title_activity_tela_menu"
-            android:theme="@style/Theme.AppBarberFast.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppBarberFast.NoActionBar"></activity>
         <activity
             android:name=".ActivityTelaLogin"
-            android:label="Login">
-        </activity>
+            android:label="Login"></activity>
         <activity
             android:name=".ActivityTelaSplash"
             android:exported="true">

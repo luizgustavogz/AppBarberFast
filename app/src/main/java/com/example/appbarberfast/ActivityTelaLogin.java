@@ -35,7 +35,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
         txtCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent telaCadastro = new Intent(getApplicationContext(), ActivityTelaCadastro.class);
+                Intent telaCadastro = new Intent(getApplicationContext(), ActivityTelaAgendamento.class);
                 startActivity(telaCadastro);
             }
         });
