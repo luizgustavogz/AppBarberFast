@@ -1,9 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fundo_azul"
     tools:context=".ActivityTelaAgendamento">
 
+  <ImageView
+      android:id="@+id/imageView5"
+      android:layout_width="205dp"
+      android:layout_height="114dp"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.464"
+      app:srcCompat="@drawable/barber_fast_15" />
+
+  <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="372dp"
+      android:layout_height="wrap_content"
+      android:background="#4A4949"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.487"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_Nome"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Nome:" />
+
+      <EditText
+          android:id="@+id/et_nome"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_TipoCorte"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Tipo do Corte:" />
+
+      <EditText
+          android:id="@+id/et_TipoCorte"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_MelhorDia"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Melhor dia da semana:" />
+
+      <EditText
+          android:id="@+id/et_MelhorDia"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_NomeBarbeiro"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Nome do Barbeiro" />
+
+      <EditText
+          android:id="@+id/et_NomeBarbeiro"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <Space
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+
+      <Button
+          android:id="@+id/btn_gravar"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:onClick="inserirRegistro"
+          android:text="Agendar Corte" />
+
+      <Space
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+
+      <Button
+          android:id="@+id/btn_consultar"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:onClick="abrir_tela_consulta"
+          android:text="Cortes Agendados" />
+
+      <Space
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_fechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fechar" />
+
+  </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

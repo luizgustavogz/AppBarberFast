@@ -1,5 +1,6 @@
 package com.example.appbarberfast.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.appbarberfast.ActivityTelaAgendamento;
+import com.example.appbarberfast.ActivityTelaLogin;
 import com.example.appbarberfast.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -34,4 +37,12 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+    public void chamarTela(View view){
+
+        Intent telaLogin = new Intent(getActivity(), ActivityTelaAgendamento.class);
+        startActivity(telaLogin);
+
+    }
+
 }
