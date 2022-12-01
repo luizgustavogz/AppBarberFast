@@ -35,7 +35,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
         txtCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent telaCadastro = new Intent(getApplicationContext(), ActivityTelaAgendamento.class);
+                Intent telaCadastro = new Intent(getApplicationContext(), ActivityTelaCadastro.class);
                 startActivity(telaCadastro);
             }
         });
@@ -54,7 +54,7 @@ public class ActivityTelaLogin extends AppCompatActivity {
                     Boolean verificarSenha = db.verificarUsuarioSenha(usuario, senha);
                     if (verificarSenha == true) {
                         Toast.makeText(ActivityTelaLogin.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), ActivityTelaMenu.class);
+                        Intent intent = new Intent(getApplicationContext(), ActivityTelaAgendamento.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(ActivityTelaLogin.this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();

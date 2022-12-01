@@ -34,10 +34,6 @@
             android:exported="false"
             android:label="Cadastro"></activity>
         <activity
-            android:name=".ActivityTelaMenu"
-            android:label="@string/title_activity_tela_menu"
-            android:theme="@style/Theme.AppBarberFast.NoActionBar"></activity>
-        <activity
             android:name=".ActivityTelaLogin"
             android:label="Login"></activity>
         <activity
