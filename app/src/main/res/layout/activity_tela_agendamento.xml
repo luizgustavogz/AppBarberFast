@@ -23,7 +23,7 @@
       android:id="@+id/linearLayout"
       android:layout_width="372dp"
       android:layout_height="wrap_content"
-      android:background="#4A4949"
+      android:background="@color/fundo_azul"
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"

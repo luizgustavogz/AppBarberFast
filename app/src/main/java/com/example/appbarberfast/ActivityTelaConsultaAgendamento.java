@@ -33,8 +33,8 @@ public class ActivityTelaConsultaAgendamento extends AppCompatActivity {
     }
 
     public void voltar_tela_agendamento(View v){
-        Intent TelaAgendamento= new Intent(this,ActivityTelaAgendamento.class);
-        startActivity(TelaAgendamento);
+        Intent intent= new Intent(this,ActivityTelaAgendamento.class);
+        startActivity(intent);
     }
 
     public void abrirBanco(){
