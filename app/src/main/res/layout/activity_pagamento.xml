@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityTelaPagamento">
+
+    <!--on below line we are creating a pay view-->
+    <com.fevziomurtekin.payview.Payview
+        android:id="@+id/payview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardAnimationType="vertical"
+        app:cardBgColor="@color/purple_200"
+        app:cardCvErrorText="You must enter 3-digit characters"
+        app:cardCvTextSize="14"
+        app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
+        app:cardFgColor="@android:color/white"
+        app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
+        app:cardMonthTextSize="13"
+        app:cardNameHelperText="Digite o nome que aparece no cartão."
+        app:cardNameTextSize="15"
+        app:cardNoTextSize="14"
+        app:cardNumberHelperText="Digite o número do cartão."
+        app:cardTextColor="@color/purple_200"
+        app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
+        app:cardYearTextSize="13" />
+</RelativeLayout>
