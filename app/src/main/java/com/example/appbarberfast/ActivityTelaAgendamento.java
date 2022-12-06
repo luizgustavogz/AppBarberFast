@@ -11,32 +11,52 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import android.database.sqlite.SQLiteDatabase; //Banco de Dados
-import android.database.Cursor; //Navegar entre os registros
 import android.widget.*;
 
+import java.text.BreakIterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class ActivityTelaAgendamento extends AppCompatActivity {
 
-    private static final int TEMPO_TELA_ABERTA = 1500;
-    EditText et_nome, et_TipoCorte, et_MelhorDia, et_NomeBarbeiro;
-    Button btn_gravar, btn_consultar, btn_fechar;
+    private static final String[] tipoCortes = new String[]{"Cabelo", "Barba", "Cabelo e Barba", "Massagem facial"};
+    private static final String[] dias = new String[]{"Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"};
+    private static final String[] barbeiros = new String[]{"João Pedro", "Luiz Gustavo", "Vitor Brito", "Abner Silva", "Gean Araujo"};
 
+    private static final int TEMPO_TELA_ABERTA = 1500;
     SQLiteDatabase db = null;
+
+    EditText et_nome;
+    Button btn_gravar, btn_consultar, btn_fechar;
+    Spinner tipoCorte, melhorDia, nomeBarbeiro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_agendamento);
 
-        et_nome = (EditText) findViewById(R.id.et_nome);
-        et_TipoCorte = (EditText) findViewById(R.id.et_TipoCorte);
-        et_MelhorDia = (EditText) findViewById(R.id.et_MelhorDia);
-        et_NomeBarbeiro = (EditText) findViewById(R.id.et_NomeBarbeiro);
         btn_gravar = (Button) findViewById(R.id.btn_gravar);
         btn_consultar = (Button) findViewById(R.id.btn_consultar);
         btn_fechar = (Button) findViewById(R.id.btn_fechar);
+
+        et_nome = (EditText) findViewById(R.id.et_nome);
+
+        tipoCorte = (Spinner) findViewById(R.id.sp_tipoCorte);
+        melhorDia = (Spinner) findViewById(R.id.sp_melhorDia);
+        nomeBarbeiro = (Spinner) findViewById(R.id.sp_nomeBarbeiro);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tipoCortes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoCorte.setAdapter(adapter);
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(ActivityTelaAgendamento.this, android.R.layout.simple_spinner_item, dias);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        melhorDia.setAdapter(adapter2);
+        //melhorDia.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(ActivityTelaAgendamento.this, android.R.layout.simple_spinner_item, barbeiros);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        nomeBarbeiro.setAdapter(adapter3);
 
         abrirBanco();
         abrirOuCriarTabela();
@@ -66,9 +86,9 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
     public void inserirRegistro(View v) {
         String st_nome, st_TipoCorte, st_MelhorDia, st_NomeBarbeiro;
         st_nome = et_nome.getText().toString();
-        st_TipoCorte = et_TipoCorte.getText().toString();
-        st_MelhorDia = et_MelhorDia.getText().toString();
-        st_NomeBarbeiro = et_NomeBarbeiro.getText().toString();
+        st_TipoCorte = tipoCortes.toString();
+        st_MelhorDia = dias.toString();
+        st_NomeBarbeiro = barbeiros.toString();
 
         if (TextUtils.isEmpty(st_nome) || TextUtils.isEmpty(st_TipoCorte) || TextUtils.isEmpty(st_MelhorDia) || TextUtils.isEmpty(st_NomeBarbeiro)) {
             msg("ERROR: Campos não podem estar vazios");
@@ -95,10 +115,10 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
         }
         fecharDB();
 
-        et_nome.setText(null);
-        et_TipoCorte.setText(null);
-        et_MelhorDia.setText(null);
-        et_NomeBarbeiro.setText(null);
+        //et_nome.setText(null);
+        //tipoCortes.toString().replace("", "");
+        //dias.toString().replace("", "");
+        //barbeiros.toString().replace("", "");
     }
 
     public void abrir_tela_consulta(View v) {

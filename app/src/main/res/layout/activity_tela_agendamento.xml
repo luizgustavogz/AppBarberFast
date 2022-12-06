@@ -63,12 +63,11 @@
           android:text="Tipo do Corte:"
           android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-      <EditText
-          android:id="@+id/et_TipoCorte"
+      <Spinner
+          android:id="@+id/sp_tipoCorte"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:ems="10"
-          android:inputType="textPersonName" />
+          android:layout_height="40dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -83,12 +82,11 @@
           android:text="Melhor dia da semana:"
           android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-      <EditText
-          android:id="@+id/et_MelhorDia"
+      <Spinner
+          android:id="@+id/sp_melhorDia"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:ems="10"
-          android:inputType="textPersonName" />
+          android:layout_height="40dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -103,12 +101,11 @@
           android:text="Nome do Barbeiro"
           android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-      <EditText
-          android:id="@+id/et_NomeBarbeiro"
+      <Spinner
+          android:id="@+id/sp_nomeBarbeiro"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:ems="10"
-          android:inputType="textPersonName" />
+          android:layout_height="40dp" />
+
     </LinearLayout>
 
     <LinearLayout
