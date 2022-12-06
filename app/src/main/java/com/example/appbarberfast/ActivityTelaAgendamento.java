@@ -52,7 +52,6 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(ActivityTelaAgendamento.this, android.R.layout.simple_spinner_item, dias);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         melhorDia.setAdapter(adapter2);
-        //melhorDia.setOnItemSelectedListener(this);
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(ActivityTelaAgendamento.this, android.R.layout.simple_spinner_item, barbeiros);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
