@@ -40,15 +40,15 @@
                 android:id="@+id/tv_nome_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Nome:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
                 android:id="@+id/et_nome_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,15 +60,15 @@
                 android:id="@+id/tv_tipo_corte_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Tipo do Corte:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
                 android:id="@+id/et_tipo_corte_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,15 +80,15 @@
                 android:id="@+id/tv_melhor_dia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Melhor dia da semana:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
                 android:id="@+id/et_melhor_dia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,15 +100,15 @@
                 android:id="@+id/tv_nome_barbeiro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Nome do Barbeiro:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
                 android:id="@+id/et_nome_barbeiro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,6 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="RegistroAnterior"
                 android:text="Anterior" />
 
             <Space
@@ -138,6 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="ProximoRegistro"
                 android:text="Proximo " />
 
             <Space

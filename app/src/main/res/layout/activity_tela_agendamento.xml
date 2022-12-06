@@ -40,7 +40,8 @@
           android:id="@+id/tv_Nome"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Nome:" />
+          android:text="Nome:"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
       <EditText
           android:id="@+id/et_nome"
@@ -59,7 +60,8 @@
           android:id="@+id/tv_TipoCorte"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Tipo do Corte:" />
+          android:text="Tipo do Corte:"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
       <EditText
           android:id="@+id/et_TipoCorte"
@@ -78,7 +80,8 @@
           android:id="@+id/tv_MelhorDia"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Melhor dia da semana:" />
+          android:text="Melhor dia da semana:"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
       <EditText
           android:id="@+id/et_MelhorDia"
@@ -97,7 +100,8 @@
           android:id="@+id/tv_NomeBarbeiro"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Nome do Barbeiro" />
+          android:text="Nome do Barbeiro"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
       <EditText
           android:id="@+id/et_NomeBarbeiro"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,8 +14,12 @@ import android.database.sqlite.SQLiteDatabase; //Banco de Dados
 import android.database.Cursor; //Navegar entre os registros
 import android.widget.*;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class ActivityTelaAgendamento extends AppCompatActivity {
 
+    private static final int TEMPO_TELA_ABERTA = 1500;
     EditText et_nome, et_TipoCorte, et_MelhorDia, et_NomeBarbeiro;
     Button btn_gravar, btn_consultar, btn_fechar;
 
@@ -38,43 +43,55 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
         fecharDB();
     }
 
-    public void abrirBanco(){
-        try{
-            db=openOrCreateDatabase("bancoAgenda",MODE_PRIVATE,null);
-        }catch (Exception ex){
+    public void abrirBanco() {
+        try {
+            db = openOrCreateDatabase("bancoAgenda", MODE_PRIVATE, null);
+        } catch (Exception ex) {
             msg("Erro ao abrir ou criar o banco de dados");
         }
     }
 
-    public void abrirOuCriarTabela(){
-        try{
-            db.execSQL("CREATE TABLE IF NOT EXISTS contatos(id INTEGER PRIMARY KEY, nome TEXT, tipoCorte TXT, MelhorDia TXT, NomeBarbeiro TXT);");
-        }catch (Exception ex){
+    public void abrirOuCriarTabela() {
+        try {
+            db.execSQL("CREATE TABLE IF NOT EXISTS contatos(id INTEGER PRIMARY KEY, nome TEXT, tipoCorte TEXT, MelhorDia TEXT, NomeBarbeiro TEXT);");
+        } catch (Exception ex) {
             msg("Erro ao criar Tabela");
         }
     }
 
-    public void fecharDB(){
+    public void fecharDB() {
         db.close();
     }
 
-    public void inserirRegistro(View v){
+    public void inserirRegistro(View v) {
         String st_nome, st_TipoCorte, st_MelhorDia, st_NomeBarbeiro;
         st_nome = et_nome.getText().toString();
         st_TipoCorte = et_TipoCorte.getText().toString();
         st_MelhorDia = et_MelhorDia.getText().toString();
         st_NomeBarbeiro = et_NomeBarbeiro.getText().toString();
-        if(st_nome == "" || st_TipoCorte == "" || st_MelhorDia == "" || st_NomeBarbeiro == ""){
-            msg("campos nao podem estar vazios");
+
+        if (TextUtils.isEmpty(st_nome) || TextUtils.isEmpty(st_TipoCorte) || TextUtils.isEmpty(st_MelhorDia) || TextUtils.isEmpty(st_NomeBarbeiro)) {
+            msg("ERROR: Campos não podem estar vazios");
             return;
         }
+
         abrirBanco();
         try {
-            db.execSQL("INSERT INTO contatos (nome, tipoCorte, MelhorDia, NomeBarbeiro) VALUES ('"+st_nome+"', '"+st_TipoCorte+"', '"+st_MelhorDia+"', '"+st_NomeBarbeiro+"')");
-        }catch (Exception ex){
-            msg("Erro ao inserir registro");
-        }finally {
-            msg("dados de agendamento realizado com sucesso");
+            db.execSQL("INSERT INTO contatos (nome, tipoCorte, MelhorDia, NomeBarbeiro) VALUES ('" + st_nome + "', '" + st_TipoCorte + "', '" + st_MelhorDia + "', '" + st_NomeBarbeiro + "')");
+        } catch (Exception ex) {
+            msg("Erro no agendamento. Tente novamente.");
+        } finally {
+            Toast.makeText(getApplicationContext(), "Redirecionando para pagamento.", Toast.LENGTH_SHORT).show();
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    finish();
+                    Intent intent = new Intent(getApplicationContext(), ActivityTelaPagamento.class);
+                    startActivity(intent);
+                }
+            }, TEMPO_TELA_ABERTA);
+
+
         }
         fecharDB();
 
@@ -84,13 +101,13 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
         et_NomeBarbeiro.setText(null);
     }
 
-    public void abrir_tela_consulta(View v){
-        Intent TelaConsulta= new Intent(this,ActivityTelaConsultaAgendamento.class);
-        startActivity(TelaConsulta);
+    public void abrir_tela_consulta(View v) {
+        Intent intent = new Intent(this, ActivityTelaConsultaAgendamento.class);
+        startActivity(intent);
     }
 
-    public void msg(String txt){
-        AlertDialog.Builder adb=new AlertDialog.Builder(this);
+    public void msg(String txt) {
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setMessage(txt);
         adb.setNeutralButton("OK", null);
         adb.show();

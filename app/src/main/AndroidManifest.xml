@@ -21,14 +21,16 @@
             android:label="Pagamento" />
         <activity
             android:name=".ActivityTelaConsultaAgendamento"
-            android:exported="false">
+            android:exported="false"
+            android:label="Agendamentos">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ActivityTelaAgendamento"
-            android:exported="false">
+            android:exported="false"
+            android:label="Agendamento" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
