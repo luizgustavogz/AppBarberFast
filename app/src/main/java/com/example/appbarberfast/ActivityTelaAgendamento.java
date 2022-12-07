@@ -106,6 +106,12 @@ public class ActivityTelaAgendamento extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void voltarLogin() {
+        Intent intent = new Intent(getApplicationContext(), ActivityTelaLogin.class);
+        startActivity(intent);
+    }
+
+
     public void msg(String txt) {
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setMessage(txt);

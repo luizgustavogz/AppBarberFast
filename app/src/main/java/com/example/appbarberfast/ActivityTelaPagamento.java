@@ -25,7 +25,7 @@ public class ActivityTelaPagamento extends AppCompatActivity {
         payview.setPayOnclickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActivityTelaPagamento.this, "Cartão adicionado com sucesso! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Pagamento realizado!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), ActivityTelaAgendamento.class);
                 startActivity(intent);
             }

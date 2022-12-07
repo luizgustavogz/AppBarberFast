@@ -152,6 +152,7 @@
         android:id="@+id/btn_fechar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="voltarLogin"
         android:text="Fechar" />
 
   </LinearLayout>
